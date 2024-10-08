@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /*taking up full viewport height*/
+    background-color: #484848;
+    flex-direction: column; /* Makes sure everything stacks vertically */
+}
+
+.titles{
+    display: flex;
+    align-items: center; /*putting content at the top*/
+    flex-direction: column;
+    position: relative;
+    top: -10%;
+}
+
+.titles h1 {
+    font-size: 7rem;
+    color: #E0E0E0;
+    justify-content: center;
+    margin-bottom: 1px;
+}
+
+.letter-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.letter-box{
+    display: flex;
+    justify-content: center; /* Center the letter horizontally */
+    align-items: center; /* Center the letter vertically */
+    width: 120px; /* Fixed width for each square */
+    height: 120px; /* Fixed height for each square */
+    border: 1.5px solid #E0E0E0; /* Box border */
+    font-size: 7rem; /* Adjust the font size */
+    font-family: 'Franklin Gothic Std', Arial, sans-serif;
+    text-align: center; /* Center the letter in the box */
+    box-sizing: border-box; /* Ensure the border is included in the size */
+    padding-top: 3%; /* Remove padding to avoid gaps */
+    margin: 0; /* Ensure there's no margin between boxes */
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    border: 1.5px solid #E0E0E0; /* Box border */
+    /*font-size: 7rem;  Adjust the font size */
+    /*font-family: 'Franklin Gothic Std', Arial, sans-serif;
+    text-align: center;  Center the letter in the box */
+}
+
+h2.subtitle{
+    font-size: 16px;
+    font-family: 'Helvetica Regular', Arial, sans-serif;
+    color: #989898;
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 300;
+    padding-right: 0%;
+}
+
+footer p{
+    margin-top: 10%;
+    font-size: 12px;
+    font-family: 'Helvetica Regular', Arial, sans-serif;
+    color: #989898;
+    font-weight: 300;
+    text-align: center;
+}
+
+h3{
+    margin-top: 10%;
+    margin-bottom: 3%;
+    font-size: 2.5rem;
+    font-family: 'Helvetica Regular', Arial, sans-serif;
+    color: #DEDEDE;
+}
+
+.topcircle ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+    font-size: 1.1rem;
+    line-height: 150%;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-weight: 300;
+    color: #DEDEDE;
+    text-align: center;
+}
+
+.topcircle ul li a{
+    color: #DEDEDE;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    text-decoration: underline;
+}
+
+.circles-container {
+    display: flex;
+    gap: 100px;
+}
+
+.circle-stack{
+    position: relative;
+    width: 500px; /* Size of the circles */
+    height: 500px;
+}
+
+.circle{
+    position: absolute; /* Allow stacking on top of each other */
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: #fff;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+}
+
+.topcircle { 
+    width: 410px;
+    height: 410px;
+    background: #626262;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center; /* Center horizontally */
+    padding: 10px;
+}
+
+.bottomcircle{
+    width: 430px;
+    height: 430px;
+    background: linear-gradient(145deg, rgba(200,255,0,1) 0%, rgb(64, 124, 4) 100%);/* Inner circle color */
+    top: 20px;
+    left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.circle-stack:hover .bottomcircle {
+    transform: rotate(150deg);
+}
