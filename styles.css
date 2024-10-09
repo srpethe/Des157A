@@ -7,100 +7,111 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center; /* Centers content vertically */
-    height: 100vh; /*taking up full viewport height*/
-    background-color: #484848;
-    flex-direction: column; /* Makes sure everything stacks vertically */
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; 
+    background: radial-gradient(circle, rgb(133, 133, 133), rgb(220, 220, 220), rgb(255, 255, 255));
+    background-size: 500% 500%;
+    animation: meshMove 8s infinite ease-in-out;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.titles{
+@keyframes meshMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 74% 23%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#banner{
+    width: 1100px;
+    height: 250px;
     display: flex;
-    align-items: center; /*putting content at the top*/
+    align-items: center;
     flex-direction: column;
     position: relative;
     top: -10%;
 }
 
-.titles h1 {
+#banner h1, main h2, h2.subtitle, footer p, footer a, .topcircle ul{
+    font-family: 'Helvetica Regular', Arial, sans-serif;
+}
+
+#banner h1 {
     font-size: 7rem;
-    color: #E0E0E0;
-    justify-content: center;
+    color: #575757;
     margin-bottom: 1px;
 }
 
 .letter-container{
     display: flex;
-    flex-direction: row;
 }
 
 .letter-box{
     display: flex;
-    justify-content: center; /* Center the letter horizontally */
-    align-items: center; /* Center the letter vertically */
-    width: 120px; /* Fixed width for each square */
-    height: 120px; /* Fixed height for each square */
-    border: 1.5px solid #E0E0E0; /* Box border */
-    font-size: 7rem; /* Adjust the font size */
-    font-family: 'Franklin Gothic Std', Arial, sans-serif;
-    text-align: center; /* Center the letter in the box */
-    box-sizing: border-box; /* Ensure the border is included in the size */
-    padding-top: 3%; /* Remove padding to avoid gaps */
-    margin: 0; /* Ensure there's no margin between boxes */
-    /*display: flex;
     justify-content: center;
-    align-items: center;
-    display: inline-block;
-    width: 120px;
-    height: 120px;
-    box-sizing: border-box;
-    border: 1.5px solid #E0E0E0; /* Box border */
-    /*font-size: 7rem;  Adjust the font size */
-    /*font-family: 'Franklin Gothic Std', Arial, sans-serif;
-    text-align: center;  Center the letter in the box */
+    align-items: center; 
+    width: 120px; 
+    height: 120px; 
+    border: 1.5px solid #484848;
+    font-family: 'Franklin Gothic Std', Arial, sans-serif;
+    text-align: center; 
+    padding-top: 3%; 
+    margin: 0; 
+    transition: padding-bottom 0.1s ease;
+}
+
+.letter-box:hover{
+    padding-bottom: 10%;
 }
 
 h2.subtitle{
-    font-size: 16px;
-    font-family: 'Helvetica Regular', Arial, sans-serif;
-    color: #989898;
+    font-size: 1rem;
+    color: #565656;
     text-align: right;
     width: 100%;
     margin-top: 10px;
     font-weight: 300;
-    padding-right: 0%;
+    padding-right: 12%;
 }
 
-footer p{
-    margin-top: 10%;
-    font-size: 12px;
-    font-family: 'Helvetica Regular', Arial, sans-serif;
+footer p, footer a{
+    margin-top: 25%;
+    padding-top: 10%;
+    font-size: 0.8rem;
     color: #989898;
     font-weight: 300;
     text-align: center;
 }
 
-h3{
+main h2{
     margin-top: 10%;
     margin-bottom: 3%;
     font-size: 2.5rem;
-    font-family: 'Helvetica Regular', Arial, sans-serif;
-    color: #DEDEDE;
+    color: #545454;
 }
 
 .topcircle ul{
     list-style-type: none;
-    padding: 0;
-    margin: 10px 0 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 150%;
-    font-family: 'Helvetica', Arial, sans-serif;
     font-weight: 300;
-    color: #DEDEDE;
+    color: #545454;
     text-align: center;
 }
 
+li:hover{
+    background-color: rgb(170, 218, 0);
+}
+
 .topcircle ul li a{
-    color: #DEDEDE;
+    color: #484848;
     text-decoration: none;
 }
 
@@ -110,30 +121,26 @@ ul li a:hover{
 
 .circles-container {
     display: flex;
-    gap: 100px;
+    gap: 5vw;
 }
 
 .circle-stack{
     position: relative;
-    width: 500px; /* Size of the circles */
-    height: 500px;
+    width: 450px;
+    height: 450px;
 }
 
 .circle{
     position: absolute; /* Allow stacking on top of each other */
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    background: #fff;
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
 }
 
 .topcircle { 
     width: 410px;
     height: 410px;
-    background: #626262;
+    background: #ededed;
     top: 30px;
     left: 30px;
     display: flex;
@@ -146,7 +153,7 @@ ul li a:hover{
 .bottomcircle{
     width: 430px;
     height: 430px;
-    background: linear-gradient(145deg, rgba(200,255,0,1) 0%, rgb(64, 124, 4) 100%);/* Inner circle color */
+    background: linear-gradient(145deg, rgba(200,255,0,1) 0%, rgb(91, 179, 4) 100%);/* Inner circle color */
     top: 20px;
     left: 20px;
     transition: transform 0.3s ease;
@@ -154,4 +161,191 @@ ul li a:hover{
 
 .circle-stack:hover .bottomcircle {
     transform: rotate(150deg);
+}
+
+
+@media (max-width: 1600px){
+    .circle-stack{
+        width: 400px;
+        height: 400px;
+    }
+
+    .circle{
+        width: 400px;
+        height: 400px;
+    }
+
+    .topcircle{
+        width: 380px;
+        height: 380px;
+    }
+
+    footer{
+        margin-top: 4%;
+    }
+}
+
+@media (max-width: 1400px){
+    .circles-container{
+        margin-left: -3%;
+    }
+
+    .circle-stack{
+        width: 350px;
+        height: 350px;
+    }
+
+    .circle{
+        width: 350px;
+        height: 350px;
+    }
+
+    .topcircle{
+        width: 330px;
+        height: 330px;
+    }
+
+    main h2{
+        font-size: 2.1rem;
+    }
+
+    .topcircle ul{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1200px){
+    #banner{
+        width: 100%;
+    }
+
+    .circles-container{
+        gap: 80px;
+        margin-left: -10%;
+    }
+    
+    .circle-stack{
+        width: 300px;
+        height: 300px;
+    }
+
+    .circle{
+        width: 350px;
+        height: 350px;
+    }
+
+    .topcircle{
+        width: 330px;
+        height: 330px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    
+    #banner{
+        width: 80%;
+        top: 10%;
+    }
+    
+    main h2{
+        font-size: 1.5rem;
+    }
+
+    .letter-box {
+        width: 15vw;
+        height: 15vw;
+        font-size: 4vw;
+    }
+
+    .letter-box{
+        font-size: 4rem;
+        width: 80px; 
+        height: 80px; 
+        border: 1px solid #484848; 
+        padding-top: 2%;
+    }
+
+    footer p {
+        margin-top: 40%;
+        margin-bottom: 25%;
+    }
+
+    .circles-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 8%;
+        padding-top: 60%;
+    }
+
+    .circle-stack {
+        width: 250px; 
+        height: 250px;
+    }
+
+    .circle{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+    .topcircle { 
+        width: 280px;
+        height: 280px;
+        top: 30px;
+        left: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    
+    #banner{
+        top: 60%;
+    }
+
+    h3{
+        margin: 5%;
+    }
+
+    p, a {
+        margin-top: 40%;
+        font-size: 1rem;
+    }
+
+    .circles-container{
+        margin-top: 25%;
+        padding-top: 60%;
+    }
+
+    .circle-stack {
+        width: 250px; 
+        height: 250px;
+    }
+
+    .circle{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+
+    .topcircle { 
+        width: 280px;
+        height: 280px;
+        top: 30px;
+        left: 30px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .letter-box{
+        font-size: 3rem;
+        width: 65px; /* Fixed width for each square */
+        height: 65px; /* Fixed height for each square */
+    }
+
+    .circles-container{
+        margin-top: 45%;
+        padding-top: 80%;
+    }
 }
