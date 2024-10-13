@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+
+    <style>
+        #circle{
+            height: 100px;
+            width: 100px;
+            color: #fff;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            line-height: 75px;
+        }
+
+        .p{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <h2>Making a fun experience with JavaScript</h2>
+
+    <div id="circle">
+        <p>your result</p>
+    </div>
+
+    <script>
+        
+        var primaryOptions = ['red', 'blue', 'yellow'];
+        var secondaryOptions = ['orange', 'green', 'purple'];
+
+        function flipCoin (userCoin){
+            var flipCoinResult = 0;
+            if (userCoin.toLowerCase() == 'yes'){
+                return flipCoinResult = 2;
+            } else {
+                return flipCoinResult = 1;
+            }
+        }
+
+        function changeCircleColor (flipCoinResult, userColor){
+            var circleElement = document.getElementById('circle');
+
+            if (flipCoinResult == 2){
+                circleElement.style.backgroundColor = secondaryOptions[userColor - 1];
+            } else if (flipCoinResult == 1){
+                circleElement.style.backgroundColor = primaryOptions[userColor - 1];
+            }
+        }
+
+        var userCoin =  prompt('hiya! Would you like to flip a coin?');
+        var userColor = prompt('thank you! please pick a number from 1 through 3.');
+        
+
+        changeCircleColor(flipCoin(userCoin), userColor);
+
+    </script>
+    
+</body>
+</html>
