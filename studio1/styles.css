@@ -236,6 +236,36 @@ label{
     position: relative;
 }
 
+.overlay #madlib p{
+    font-family: 'Comic Neue', sans serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ffffff;
+    width: 60%;
+    position: absolute;
+    left: 300px;
+    top: 250px;
+}
+
+.overlay #madlib h1{
+    font-family: 'Comic Neue', sans serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    stroke: rgb(255, 255, 255);
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    position: absolute;
+    left: 300px;
+    top: 100px;
+}
+
+.overlay #madlib span{
+    font-weight: bold;
+    text-decoration: underline;
+    stroke: rgb(255, 255, 255);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
 .overlay #close{
     background-color: #3062B2;
     border: 2px solid rgb(255, 255, 255);
