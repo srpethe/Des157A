@@ -104,6 +104,11 @@ body {
     grid-row-end: 7;
 }
 
+img{
+    max-width: 30%;
+    max-height: 30%;
+}
+
 /* Responsive design */
 @media (max-width: 600px) {
     .bento-container {
