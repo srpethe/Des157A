@@ -7,14 +7,21 @@
     const madlib = document.querySelector('#madlib');
     const formData = document.querySelectorAll('input[type=text]');
     const playOverlay = document.querySelector('#greenOverlay');
+    const closeButton = document.getElementById('close');
 
     myForm.addEventListener('submit', function(e){
         e.preventDefault();
         processFormData(formData);
-        myForm.className = 'formOverlay';
-        playOverlay.className = 'overlay';
-        console.log(myForm.className);
+        console.log(formData);
     });
+
+    document.getElementById('close').addEventListener('click', function(e){
+        e.preventDefault();
+        myForm.className = 'noFormOverlay';
+        playOverlay.className = 'noOverlay';
+        console.log("entered");
+        madlib.innerHTML = '';
+    })
 
     function processFormData(formData){
         const emptyfields = [];
@@ -22,25 +29,27 @@
         const words = [];
 
         for(const eachWord of formData){
-            if(eachWord.value){
-                words.push(eachWord.value);
-            } else {
+            if(eachWord.value == ""){
                 emptyfields.push(counter);
+            } else {
+                words.push(eachWord.value);
             }
             counter++;
         }
 
         if (emptyfields.length > 0){
             showErrors(formData, emptyfields);
+            console.log("entered");
         } else {
+            myForm.className = 'formOverlay';
+            playOverlay.className = 'overlay';
+            console.log(myForm.className);
             makeMadLib(words);
         }
     };
 
     function showErrors(formData, emptyfields){
         const errorId = formData[emptyfields[0]].id;
-        //const errorText = `Please fill out field ${errorId}`;
-        //madlib.innerHTML = errorText;
         document.querySelector(`#${errorId}`).focus();
     }
 
