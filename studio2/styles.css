@@ -1,0 +1,287 @@
+body{
+    background: #7D7D7D;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /*
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;*/
+}
+
+img{
+    width: 80%;
+    border-radius: 24px;
+    border: 4px solid #fff;
+}
+
+h1{
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 60px;
+    color: #fff;
+    width: 740px;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+span{
+    font-family: Montserrat, sans-serif;
+    font-style: italic;
+}
+
+.horizontal{
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+}
+
+.vertical{
+    display: flex;
+    flex-direction: column;
+    gap: 110px;
+}
+
+.stonehenge {
+    position: relative;
+    width: 640px;
+}
+
+.stonehenge img{
+    width: 100%;
+    display: block;
+} 
+
+.stonehenge .hover-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.stonehenge .clicked-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.stonehenge:hover .hover-image{
+    opacity: 0.5;
+}
+
+.egyptian {
+    position: relative;
+    width: 640px;
+}
+
+.egyptian img{
+    width: 100%;
+    display: block;
+} 
+
+.egyptian .hover-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.egyptian .clicked-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.egyptian:hover .hover-image{
+    opacity: 0.5;
+}
+
+.roman-baths {
+    position: relative;
+    width: 640px;
+}
+
+.roman-baths img{
+    width: 100%;
+    display: block;
+} 
+
+.roman-baths .hover-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.roman-baths .clicked-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.roman-baths:hover .hover-image{
+    opacity: 0.5;
+}
+
+.fort {
+    position: relative;
+    width: 640px;
+}
+
+.fort img{
+    width: 100%;
+    display: block;
+} 
+
+.fort .hover-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.fort .clicked-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.fort:hover .hover-image{
+    opacity: 0.5;
+}
+
+.temple {
+    position: relative;
+    width: 640px;
+}
+
+.temple img{
+    width: 100%;
+    display: block;
+} 
+
+.temple .hover-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.temple .clicked-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.temple:hover .hover-image{
+    opacity: 0.5;
+}
+
+.globe {
+    position: relative;
+    width: 640px;
+}
+
+.globe img{
+    width: 100%;
+    display: block;
+} 
+
+.globe .hover-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.globe .clicked-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.globe:hover .hover-image{
+    opacity: 0.5;
+}
+
+.football {
+    position: relative;
+    width: 640px;
+}
+
+.football img{
+    width: 100%;
+    display: block;
+} 
+
+.football .hover-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.football .clicked-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.football:hover .hover-image{
+    opacity: 0.5;
+}
+
+
+
+
+
