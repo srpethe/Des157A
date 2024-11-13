@@ -3,14 +3,12 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    /*
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 10%;*/
+    margin-top: -15%;
+    padding-bottom: 1000px;
 }
 
 img{
-    width: 80%;
+    width: 100%;
     border-radius: 24px;
     border: 4px solid #fff;
 }
@@ -18,23 +16,15 @@ img{
 h1{
     font-family: Montserrat, sans-serif;
     font-weight: 300;
-    font-size: 60px;
+    font-size: 80px;
     color: #fff;
-    width: 740px;
+    width: 1000px;
     text-align: center;
-    margin-top: 120px;
-    margin-bottom: 120px;
 }
 
 span{
     font-family: Montserrat, sans-serif;
     font-style: italic;
-}
-
-.horizontal{
-    display: flex;
-    flex-direction: row;
-    gap: 110px;
 }
 
 .vertical{
@@ -43,10 +33,183 @@ span{
     gap: 110px;
 }
 
+section{
+   /*  height: calc(100svh); */
+    padding-top: 500px;
+}
+
+/* Keyframes for the effects */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes verticalMove {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes horizontalMove {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes slideFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        transform: scale(1.05);
+    }
+}
+
+.offscreen{
+    opacity: 0;
+}
+
+.animate1{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.animate2{  
+    opacity: 0;
+    transform: translateY(200px);
+    animation: verticalMove 1s ease-out forwards;
+    /* Delay the animation if needed */
+    animation-delay: 0.2s;
+}
+
+.animate3{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+#section3{
+    margin-top: 100px;
+}
+
+#section4{
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+}
+
+#section6{
+    margin-top: -200px;;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+}
+
+#section10{
+    margin-bottom: 5%;
+}
+
+.animateEgypt{
+    opacity: 0;
+    transform: translateX(-250px);
+    animation: horizontalMove 1.5s ease-out forwards;
+}
+
+
+ .animateRoman{
+    opacity: 0;
+    transform: translateX(250px);
+    animation: horizontalMove 1.5s ease-out forwards;
+}
+
+.animate5{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.animateFort{
+    opacity: 0;
+    transform: translateY(-200px);
+    animation: verticalMove 1s ease-out forwards;
+}
+
+.animateTemple{
+    opacity: 0;
+    transform: translateY(200px);
+    animation: verticalMove 1s ease-out forwards;
+}
+
+.animate7{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.animate8{
+    opacity: 0;
+    transform: translateX(250px);
+    animation: horizontalMove 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.animate9{
+    opacity: 0;
+    transform: translateX(-250px);
+    animation: horizontalMove 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.animate10{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+    transform: scale(0.8);
+}
+
+
+#section5{
+    margin-top: 200px;
+}
+
+#section6{
+    margin-top: 250px;
+}
+
+
 .stonehenge {
     position: relative;
-    width: 640px;
+    width: 800px;
 }
+
+
+.bgcolor1{ background-color: red; transition: all 1s;} /* use this logic to build animation*/
+.bgcolor2{ background-color: green; transition: all 1s;} /* to change & animate the content we need to change the class name when the bgcolor changes*/
+.bgcolor3{ background-color: blue; transition: all 1s;}
+.bgcolor4{ background-color: purple; transition: all 1s;}
+.bgcolor5{ background-color: orange; transition: all 1s;}
+.bgcolor6{ background-color: yellow; transition: all 1s;}
+.bgcolor7{ background-color: pink; transition: all 1s;}
 
 .stonehenge img{
     width: 100%;
@@ -77,17 +240,17 @@ span{
     opacity: 0.5;
 }
 
-.egyptian {
+#egyptian {
     position: relative;
     width: 640px;
 }
 
-.egyptian img{
+#egyptian img{
     width: 100%;
     display: block;
 } 
 
-.egyptian .hover-image{
+#egyptian .hover-image{
     position: absolute;
     top: 0;
     left: 0;
@@ -97,7 +260,7 @@ span{
     transition: opacity 0.3s ease;
 }
 
-.egyptian .clicked-image{
+#egyptian .clicked-image{
     position: absolute;
     top: 0;
     left: 0;
@@ -107,21 +270,21 @@ span{
     transition: opacity 0.3s ease;
 }
 
-.egyptian:hover .hover-image{
+#egyptian:hover .hover-image{
     opacity: 0.5;
 }
 
-.roman-baths {
+#roman-baths {
     position: relative;
     width: 640px;
 }
 
-.roman-baths img{
+#roman-baths img{
     width: 100%;
     display: block;
 } 
 
-.roman-baths .hover-image{
+#roman-baths .hover-image{
     position: absolute;
     top: 0;
     left: 0;
@@ -131,7 +294,7 @@ span{
     transition: opacity 0.3s ease;
 }
 
-.roman-baths .clicked-image{
+#roman-baths .clicked-image{
     position: absolute;
     top: 0;
     left: 0;
@@ -141,21 +304,21 @@ span{
     transition: opacity 0.3s ease;
 }
 
-.roman-baths:hover .hover-image{
+#roman-baths:hover .hover-image{
     opacity: 0.5;
 }
 
-.fort {
+#fort {
     position: relative;
     width: 640px;
 }
 
-.fort img{
+#fort img{
     width: 100%;
     display: block;
 } 
 
-.fort .hover-image{
+#fort .hover-image{
     position: absolute;
     top: 0;
     left: 0;
@@ -165,7 +328,7 @@ span{
     transition: opacity 0.3s ease;
 }
 
-.fort .clicked-image{
+#fort .clicked-image{
     position: absolute;
     top: 0;
     left: 0;
@@ -175,21 +338,21 @@ span{
     transition: opacity 0.3s ease;
 }
 
-.fort:hover .hover-image{
+#fort:hover .hover-image{
     opacity: 0.5;
 }
 
-.temple {
+#temple {
     position: relative;
     width: 640px;
 }
 
-.temple img{
+#temple img{
     width: 100%;
     display: block;
 } 
 
-.temple .hover-image{
+#temple .hover-image{
     position: absolute;
     top: 0;
     left: 0;
@@ -199,7 +362,7 @@ span{
     transition: opacity 0.3s ease;
 }
 
-.temple .clicked-image{
+#temple .clicked-image{
     position: absolute;
     top: 0;
     left: 0;
@@ -209,7 +372,7 @@ span{
     transition: opacity 0.3s ease;
 }
 
-.temple:hover .hover-image{
+#temple:hover .hover-image{
     opacity: 0.5;
 }
 
