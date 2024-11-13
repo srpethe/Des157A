@@ -4,7 +4,7 @@ body{
     align-items: center;
     flex-direction: column;
     margin-top: -15%;
-    padding-bottom: 1000px;
+    padding-bottom: 500px;
 }
 
 img{
@@ -203,13 +203,37 @@ section{
 }
 
 
-.bgcolor1{ background-color: red; transition: all 1s;} /* use this logic to build animation*/
-.bgcolor2{ background-color: green; transition: all 1s;} /* to change & animate the content we need to change the class name when the bgcolor changes*/
-.bgcolor3{ background-color: blue; transition: all 1s;}
-.bgcolor4{ background-color: purple; transition: all 1s;}
-.bgcolor5{ background-color: orange; transition: all 1s;}
-.bgcolor6{ background-color: yellow; transition: all 1s;}
-.bgcolor7{ background-color: pink; transition: all 1s;}
+.bgcolor2{ 
+    transition: all 1s;
+    background-image: url(images/bg-image-1.jpg);
+} /* to change & animate the content we need to change the class name when the bgcolor changes*/
+.bgcolor3{ 
+    background-color: #7D7D7D; 
+    transition: all 1s;}
+.bgcolor4{ 
+    background-image: url(images/bg-image-2.jpg); 
+    transition: all 1s;}
+.bgcolor5{ 
+    background-color: #7D7D7D; 
+    transition: all 1s;}
+.bgcolor6{ 
+    background-image: url(images/bg-image-3.jpg); 
+    transition: all 1s;}
+.bgcolor7{ 
+    background-color: #7D7D7D; 
+    transition: all 1s;}
+.bgcolor8{
+    background-image: url(images/bg-image-4.jpg);
+    transition: all 1s;
+}
+.bgcolor9{
+    background-image: url(images/bg-image-5.jpg);
+    transition: all 1s;
+}
+.bgcolor10{ 
+    background-color: #7D7D7D; 
+    transition: all 1s;}
+
 
 .stonehenge img{
     width: 100%;

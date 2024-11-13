@@ -28,10 +28,10 @@ window.addEventListener('load', function(){
         }
         if (counter != prevCounter) {
 
-            /*
+            
             const style = `bgcolor${counter}`;
             this.document.querySelector('body').className = style;
-            */
+            console.log(counter);
 
             //need to figure out how to put all sections into an array and then call them based on counter
             for (const eachPost of sections){
