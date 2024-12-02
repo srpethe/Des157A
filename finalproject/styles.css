@@ -1,0 +1,370 @@
+/*styling for whole page*/
+body{
+    background: #7D7D7D;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -15%;
+    padding-bottom: 500px;
+    transition: background-color 0.5s ease, background-image 0.5s ease;}
+img{
+    width: 100%;
+    border-radius: 24px;
+    border: 4px solid #fff;}
+h1{
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 80px;
+    color: #fff;
+    width: 1000px;
+    text-align: center;}
+span{
+    font-family: Montserrat, sans-serif;
+    font-style: italic;}
+section{
+    padding-top: 500px;}
+
+/* Keyframes for the effects */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }}
+
+@keyframes verticalMove {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1.05);
+    }}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1.05);
+    }}
+
+@keyframes horizontalMove {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        transform: scale(1.05);
+    }}
+
+@keyframes slideFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        transform: scale(1.05);
+    }}
+
+
+/*styling for section 1*/
+#section1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 200px;}
+@keyframes bob {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.05);
+    }}
+#scrollButton {
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    background: transparent;
+    color: white;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: bob 2s infinite;}
+#scrollButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #000;}
+#scrollButton::after {
+    content: '▼';
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+    color: white;
+    transition: color 0.3s ease;}
+
+
+/*image scroll animations*/
+.offscreen{
+    opacity: 0;
+}
+
+.animate1{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.animate2{  
+    opacity: 0;
+    transform: translateY(200px);
+    animation: verticalMove 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.animate3{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.animate5{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.animate7{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.animate8{
+    opacity: 0;
+    transform: translateX(250px);
+    animation: horizontalMove 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.animate9{
+    opacity: 0;
+    transform: translateX(-250px);
+    animation: horizontalMove 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.animate10{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+    transform: scale(0.8);
+}
+
+#section3{
+    margin-top: 100px;
+}
+
+#section4{
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+}
+
+#section5{
+    margin-top: 200px;
+}
+
+#section6{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+}
+
+#section10{
+    margin-bottom: 5%;
+}
+
+.animateEgypt{
+    opacity: 0;
+    transform: translateX(-250px);
+    animation: horizontalMove 1.5s ease-out forwards;
+}
+
+ .animateRoman{
+    opacity: 0;
+    transform: translateX(250px);
+    animation: horizontalMove 1.5s ease-out forwards;
+}
+
+.animateFort{
+    opacity: 0;
+    transform: translateY(-200px);
+    animation: verticalMove 1s ease-out forwards;
+}
+
+.animateTemple{
+    opacity: 0;
+    transform: translateY(200px);
+    animation: verticalMove 1s ease-out forwards;
+}
+
+.stonehenge {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+    padding-right: 8px;
+    border-radius: 24px;
+}
+
+#egyptian img,
+#roman-baths img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+.stonehenge img,
+#fort img,
+#temple img,
+.globe img,
+.football img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+} 
+
+.stonehenge .hover-image,
+.stonehenge .clicked-image,
+#egyptian .hover-image,
+#egyptian .clicked-image{
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+#fort .hover-image,
+#fort .clicked-image,
+#temple .hover-image,
+#temple .clicked-image,
+.globe .hover-image,
+.globe .clicked-image,
+#roman-baths .hover-image,
+#roman-baths .clicked-image {
+    position: absolute;
+    top: -4px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.stonehenge:hover .hover-image,
+#egyptian:hover .hover-image,
+#roman-baths:hover .hover-image,
+#fort:hover .hover-image,
+#temple:hover .hover-image, 
+.globe:hover .hover-image,
+.football:hover .hover-image{
+    opacity: 0.5;
+}
+
+#egyptian {
+    position: relative;
+    width: 640px;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+    padding-right: 8px;
+    border-radius: 24px;
+}
+
+#roman-baths {
+    position: relative;
+    width: 640px;
+}
+
+#fort {
+    position: relative;
+    width: 640px;
+}
+
+#temple {
+    position: relative;
+    width: 640px;
+}
+
+.globe {
+    position: relative;
+    width: 640px;
+}
+
+.football {
+    position: relative;
+    width: 640px;
+}
+
+.football .hover-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+.football .clicked-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the hover image */
+    transition: opacity 0.3s ease;
+}
+
+/*background changes*/
+.bgcolor2{ 
+    transition: all 1s;
+    background-image: url(images/bg-image-1.jpg);
+} /* to change & animate the content we need to change the class name when the bgcolor changes*/
+.bgcolor3{ 
+    background-color: #7D7D7D; 
+    transition: all 1s;}
+.bgcolor4{ 
+    background-image: url(images/bg-image-2.jpg); 
+    transition: all 1s;}
+.bgcolor5{ 
+    background-color: #7D7D7D; 
+    transition: all 1s;}
+.bgcolor6{ 
+    background-image: url(images/bg-image-3.jpg); 
+    transition: all 1s;}
+.bgcolor7{ 
+    background-color: #7D7D7D; 
+    transition: all 1s;}
+.bgcolor8{
+    background-image: url(images/bg-image-4.jpg);
+    transition: all 1s;}
+.bgcolor9{
+    background-image: url(images/bg-image-5.jpg);
+    transition: all 1s;}
+.bgcolor10{ 
+    background-color: #7D7D7D; 
+    transition: all 1s;}
+
+
+

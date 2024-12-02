@@ -61,7 +61,6 @@ h1{
     padding-left: 10%;
     width: 80%;
     font-weight: 100;
-    align-items: left;
     color: white;
 }
 
@@ -180,9 +179,6 @@ div {
     align-items: center;
 }
 
-#gamecontrol img{
-    scale: 100%;
-}
 
 #game{
     display: flex;
