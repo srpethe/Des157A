@@ -23,6 +23,72 @@ window.addEventListener('load', function(){
         const nextSection = document.getElementById('section2');
         nextSection.scrollIntoView({ behavior: 'smooth' });
     });
+    
+    const backgroundMusic = document.querySelector('#backgroundMusic');
+    const playMusicButton = document.querySelector('#playMusicButton');
+    playMusicButton.addEventListener('click', function () {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+            playMusicButton.textContent = 'Pause Music'; // Update button text
+            console.log("music played");
+        } else {
+            backgroundMusic.pause();
+            playMusicButton.textContent = 'Play Music'; // Update button text
+            console.log("music paused");
+        }
+    });
+
+    const stonehenge = document.getElementById("stonehenge");
+
+    stonehenge.addEventListener("click", function(){
+        console.log("stonehenge clicked");
+
+        stonehenge.classList.toggle("on");
+    });
+
+    const egyptian = document.getElementById("egyptian");
+
+    egyptian.addEventListener("click", function(){
+        console.log("egyptian clicked");
+
+        egyptian.classList.toggle("on");
+    });
+
+    const romanBaths = document.getElementById("roman-baths");
+
+    romanBaths.addEventListener("click", function(){
+        console.log("roman-baths clicked");
+
+        romanBaths.classList.toggle("on");
+    });
+
+    const fort = document.getElementById("fort");
+    fort.addEventListener("click", function(){
+        console.log("fort clicked");
+
+        fort.classList.toggle("on");
+    });
+
+    const temple = document.getElementById("temple");
+    temple.addEventListener("click", function(){
+        console.log("temple clicked");
+
+        temple.classList.toggle("on");
+    });
+
+    const globe = document.getElementById("globe");
+    globe.addEventListener("click", function(){
+        console.log("globe clicked");
+
+        globe.classList.toggle("on");
+    });
+
+    const football = document.getElementById("football");
+    football.addEventListener("click", function(){
+        console.log("football clicked");
+
+        football.classList.toggle("on");
+    });
 
 
     window.addEventListener('scroll', function () {

@@ -9,20 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="script.js"></script>
+    <audio id="backgroundMusic" src="audio/background.mp3" preload="auto"></audio>
     <title>Every Picture</title>
 </head>
 
 <body>
     <section id="section1" class="animate1">
         <h1>People have gathered for <span>thousands</span> of years.</h1>
-        <button id="scrollButton">Scroll for more</button>
+        <div id="buttons">
+            <button id="playMusicButton">Play Music</button>
+            <button id="scrollButton">Scroll for more</button>
+        </div>
     </section>
     
     <section id="section2" class="offscreen">
-        <div class="stonehenge" onclick="flipCard(this)">
-            <img src="images/stonehenge-nohover.jpg" alt="picture of Stonehenge in front of a cloudy sky">
-            <img src="images/stonehenge-hover.jpg" alt="picture of Stonehenge in front of a cloudy sky with sketched people" class="hover-image">
-            <img src="images/stonehenge-click.jpg" alt="flashcard with information about Stonehenge" class="clicked-image">
+        <div class="stonehenge" id="stonehenge">
+            <img src="images/stonehenge-nohover.jpg" alt="picture of Stonehenge in front of a cloudy sky" class="base">
+            <img src="images/stonehenge-hover.jpg" alt="picture of Stonehenge in front of a cloudy sky with sketched people" class="hover">
+            <img src="images/stonehenge-click.jpg" alt="flashcard with information about Stonehenge" class="click" id="clicked">
         </div>
     </section>
     
@@ -30,18 +34,17 @@
         <h1>but <span>why</span> do we gather?</h1>
     </section>
 
-
     <section id="section4" class="offscreen">
-        <div id="egyptian">
-            <img src="images/egyptian-nohover.jpg" alt="picture of the Karnak Temple">
-            <img src="images/egyptian-hover.png" alt="picture of the Karnak Temple with sketched people" class="hover-image">
-            <img src="images/egyptian-click.jpg" alt="flashcard with information about the Karnak Temple" class="clicked-image">
+        <div class="egyptian" id="egyptian">
+            <img src="images/egyptian-nohover.jpg" alt="picture of the Karnak Temple" class="base">
+            <img src="images/egyptian-hover.jpg" alt="picture of the Karnak Temple with sketched people" class="hover-image">
+            <img src="images/egyptian-click.jpg" alt="flashcard with information about the Karnak Temple" class="click">
         </div>
 
-        <div id="roman-baths">
-            <img src="images/roman-baths-nohover.jpg" alt="picture of the Roman Baths">
+        <div class="roman-baths"id="roman-baths">
+            <img src="images/roman-baths-nohover.jpg" alt="picture of the Roman Baths" class="base">
             <img src="images/roman-baths-hover.jpg" alt="picture of the Roman Baths with sketched people" class="hover-image">
-            <img src="images/roman-baths-click.jpg" alt="flashcard with information about the Roman Baths" class="clicked-image">
+            <img src="images/roman-baths-click.jpg" alt="flashcard with information about the Roman Baths" class="click">
         </div>
     </section>
 
@@ -50,16 +53,16 @@
     </section>
 
     <section id="section6" class="offscreen">
-        <div id="fort">
-            <img src="images/fort-nohover.jpg" alt="picture of Fatehpur Sikri in India">
+        <div class="fort" id="fort">
+            <img src="images/fort-nohover.jpg" alt="picture of Fatehpur Sikri in India" class="base">
             <img src="images/fort-hover.jpg" alt="picture of Fatehpur Sikri in India with sketched people" class="hover-image">
-            <img src="images/fort-click.jpg" alt="flashcard with information about Fatehpur Sikri in India" class="clicked-image">
+            <img src="images/fort-click.jpg" alt="flashcard with information about Fatehpur Sikri in India" class="click">
         </div>
 
-        <div id="temple">
-            <img src="images/temple-nohover.jpg" alt="picture of the Monkey Temple in India">
+        <div class="temple" id="temple">
+            <img src="images/temple-nohover.jpg" alt="picture of the Monkey Temple in India" class="base">
             <img src="images/temple-hover.jpg" alt="picture of the Monkey Temple in India with sketched people" class="hover-image">
-            <img src="images/temple-click.jpg" alt="flashcard with information about the Monkey Temple in India" class="clicked-image">
+            <img src="images/temple-click.jpg" alt="flashcard with information about the Monkey Temple in India" class="click">
         </div>
     </section>
 
@@ -69,18 +72,18 @@
     </section>
     
     <section id="section8" class="offscreen">
-        <div class="globe">
-            <img src="images/globe-nohover.jpg" alt="picture of inside the Shakespeare Globe Theater">
+        <div class="globe" id="globe">
+            <img src="images/globe-nohover.jpg" alt="picture of inside the Shakespeare Globe Theater" class="base">
             <img src="images/globe-hover.jpg" alt="the Shakespeare Globe Theater with sketched people" class="hover-image">
-            <img src="images/globe-click.jpg" alt="flashcard with information about the Shakespeare Globe Theater" class="clicked-image">
+            <img src="images/globe-click.jpg" alt="flashcard with information about the Shakespeare Globe Theater" class="click">
         </div>
     </section>
 
     <section id="section9" class="offscreen">
-        <div class="football">
-            <img src="images/football-nohover.jpg" alt="picture of the UC Davis Football Stadium">
+        <div class="football" id="football">
+            <img src="images/football-nohover.jpg" alt="picture of the UC Davis Football Stadium" class="base">
             <img src="images/football-hover.jpg" alt="picture of the UC Davis Football Stadium with sketched people" class="hover-image">
-            <img src="images/football-click.jpg" alt="flashcard with information about the UC Davis Football Stadium" class="clicked-image">
+            <img src="images/football-click.jpg" alt="flashcard with information about the UC Davis Football Stadium" class="click">
         </div>
     </section>
 

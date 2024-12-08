@@ -6,11 +6,12 @@ body{
     flex-direction: column;
     margin-top: -15%;
     padding-bottom: 500px;
-    transition: background-color 0.5s ease, background-image 0.5s ease;}
+    /* transition: opacity 5s ease-in-out; */
+    opacity: 1;
+}
 img{
     width: 100%;
-    border-radius: 24px;
-    border: 4px solid #fff;}
+    border-radius: 24px;}
 h1{
     font-family: Montserrat, sans-serif;
     font-weight: 300;
@@ -19,7 +20,6 @@ h1{
     width: 1000px;
     text-align: center;}
 span{
-    font-family: Montserrat, sans-serif;
     font-style: italic;}
 section{
     padding-top: 500px;}
@@ -60,12 +60,56 @@ section{
     }}
 
 
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    /* opacity: 0; */
+    transition: opacity 2s ease-in-out; /* Animation for fading in */
+}
+
 /*styling for section 1*/
 #section1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 200px;}
+    gap: 200px;
+    z-index: 1000;
+    width: 100%;
+}
+
+#buttons{
+    margin-left: 47%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
+#playMusicButton {
+        width: 150px;
+        height: 50px;
+        z-index: 1000; /* Ensures it stays above other elements */
+        background-color: #717171; /* Button color */
+        color: white; /* Text color */
+        border: none; /* Removes border */
+        padding: 10px 20px; /* Adds padding */
+        font-family: 'Montserrat', sans-serif; /* Matches your font */
+        font-size: 16px; /* Text size */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+}
+#playMusicButton:hover {
+    background-color: #002d64; /* Slightly darker on hover */
+}
+
+
 @keyframes bob {
     0%, 100% {
         transform: translateY(0) scale(1);
@@ -100,8 +144,8 @@ section{
 /*image scroll animations*/
 .offscreen{
     opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
-
 .animate1{
     opacity: 0;
     transform: translateY(20px);
@@ -190,7 +234,7 @@ section{
     animation: horizontalMove 1.5s ease-out forwards;
 }
 
- .animateRoman{
+.animateRoman{
     opacity: 0;
     transform: translateX(250px);
     animation: horizontalMove 1.5s ease-out forwards;
@@ -208,142 +252,108 @@ section{
     animation: verticalMove 1s ease-out forwards;
 }
 
-.stonehenge {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    object-fit: cover;
-    overflow: hidden;
-    padding-right: 8px;
-    border-radius: 24px;
+
+/*handling the flip animation*/
+.base{
+    transform: rotateY(0deg); /* Front face */
 }
-
-#egyptian img,
-#roman-baths img{
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-
-.stonehenge img,
-#fort img,
-#temple img,
-.globe img,
-.football img{
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-} 
-
-.stonehenge .hover-image,
-.stonehenge .clicked-image,
-#egyptian .hover-image,
-#egyptian .clicked-image{
+.click{
     position: absolute;
-    top: -4px;
-    left: -4px;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Initially hide the hover image */
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-}
-
-#fort .hover-image,
-#fort .clicked-image,
-#temple .hover-image,
-#temple .clicked-image,
-.globe .hover-image,
-.globe .clicked-image,
-#roman-baths .hover-image,
-#roman-baths .clicked-image {
-    position: absolute;
-    top: -4px;
+    top: 0px;
     left: 0px;
+    border-radius: 24px;
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+.hover{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 28px;
+    opacity: 0;
+    transform: rotateY(0deg);
+    transition: opacity 0.3s ease-in-out;
+}
+.on .click{
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+.on .base,
+.on .hover{
+    opacity: 0;
+}
+img{
     width: 100%;
-    height: 100%;
-    opacity: 0; /* Initially hide the hover image */
-    object-fit: cover;
-    transition: opacity 0.3s ease;
+    height: 100%; /* Ensures images fill the container */
+    object-fit: cover; /* Maintains aspect ratio while filling the container */
+    position: absolute; /* Keeps images in the same position */
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: transform 0.3s, opacity 0.3s ease-in-out;
+}
+.hover-image{
+    opacity: 0;
 }
 
-.stonehenge:hover .hover-image,
-#egyptian:hover .hover-image,
+#stonehenge,
+#egyptian,
+#roman-baths,
+#temple,
+.globe,
+.football{
+    position: relative;
+    overflow: hidden;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+#stonehenge:hover .hover,
 #roman-baths:hover .hover-image,
 #fort:hover .hover-image,
-#temple:hover .hover-image, 
+#temple:hover .hover-image,
 .globe:hover .hover-image,
-.football:hover .hover-image{
+.football:hover .hover-image,
+#egyptian:hover .hover-image{
     opacity: 0.5;
 }
 
-#egyptian {
-    position: relative;
-    width: 640px;
-    height: auto;
-    object-fit: cover;
-    overflow: hidden;
-    padding-right: 8px;
-    border-radius: 24px;
+#stonehenge{
+    width: 800px;
+    height: 600px;
 }
-
-#roman-baths {
-    position: relative;
-    width: 640px;
+#egyptian,
+#roman-baths,
+#fort,
+#temple{
+    width: 600px;
+    height: 800px;
 }
-
-#fort {
-    position: relative;
-    width: 640px;
-}
-
-#temple {
-    position: relative;
-    width: 640px;
-}
-
-.globe {
-    position: relative;
-    width: 640px;
-}
-
-.football {
-    position: relative;
-    width: 640px;
-}
-
-.football .hover-image{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Initially hide the hover image */
-    transition: opacity 0.3s ease;
-}
-
-.football .clicked-image{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Initially hide the hover image */
-    transition: opacity 0.3s ease;
+.globe, 
+.football{
+    width: 650px;
+    height: 850px;
 }
 
 /*background changes*/
-.bgcolor2{ 
-    transition: all 1s;
+/*ADD ANIMATIONS OR SOMETHING TO EASE THE TRANSITION!!!!!!*/
+/* smooth keyword*/
+
+@keyframes fadeUpImg {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.bgcolor2{
     background-image: url(images/bg-image-1.jpg);
-} /* to change & animate the content we need to change the class name when the bgcolor changes*/
+    transition: opacity 3s ease;}
 .bgcolor3{ 
     background-color: #7D7D7D; 
-    transition: all 1s;}
+    animation: fadeUpImg 3s ease;}
 .bgcolor4{ 
     background-image: url(images/bg-image-2.jpg); 
     transition: all 1s;}
@@ -365,6 +375,3 @@ section{
 .bgcolor10{ 
     background-color: #7D7D7D; 
     transition: all 1s;}
-
-
-
